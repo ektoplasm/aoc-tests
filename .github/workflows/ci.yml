@@ -1,0 +1,13 @@
+name: AOC-CI
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@vlatest
+    - uses: php-actions/composer@vlatest
+    - uses: php-actions/phpunit@v12
+    - run: vendor/bin/phpunit tests
