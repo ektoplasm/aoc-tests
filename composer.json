@@ -1,0 +1,19 @@
+{
+  "name": "pauloherval/pdi-aoc2024",
+  "description": "Testing with PHPUnit",
+  "license": "private",
+  "authors": [
+    {
+      "name": "Paulo Herval",
+      "email": "pshsj.dev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/", "tests/"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.0"
+  }
+}

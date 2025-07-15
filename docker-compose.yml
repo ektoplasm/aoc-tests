@@ -1,0 +1,12 @@
+services:
+  phpunit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phpunit
+    networks:
+      - aoc
+    command: ["vendor/bin/phpunit", "tests"]
+networks:
+  aoc:
+    driver: bridge
