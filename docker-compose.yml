@@ -1,12 +1,20 @@
 services:
+  php:
+    image: hrvl/pdi-php:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php
+    networks:
+      - aoc
   phpunit:
+    image: hrvl/pdi-phpunit:latest
     build:
       context: .
       dockerfile: Dockerfile
     container_name: phpunit
     networks:
       - aoc
-    command: ["vendor/bin/phpunit", "tests"]
 networks:
   aoc:
     driver: bridge

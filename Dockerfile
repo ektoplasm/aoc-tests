@@ -8,6 +8,6 @@ RUN apt-get update && \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY . ./
+COPY ./ .
 
-RUN composer install --no-interaction --no-scripts --prefer-dist
+RUN composer install --no-interaction --no-scripts --no-progress --optimize-autoloader
