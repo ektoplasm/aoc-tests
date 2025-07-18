@@ -1,16 +1,9 @@
 <?php
 
-namespace Src;
+namespace Src\Days;
 
 final class DayOne extends Day
 {
-  private string $inputData = "";
-
-  public function setup(?string $input)
-  {
-    $this->inputData = $input;
-  }
-
   public function run(?string $input)
   {
     try {
@@ -34,15 +27,15 @@ final class DayOne extends Day
 
     $lines = explode("\n", trim($this->inputData));
 
-    $lines = array_filter($lines, fn($line) => !empty(trim($line)));
+    $validLines = array_filter($lines, fn($line) => !empty(trim($line)));
 
-    if (empty($lines))
+    if (empty($validLines))
       throw new \InvalidArgumentException("Input data is malformed.");
 
     $leftList = [];
     $rightList = [];
 
-    foreach ($lines as $line) {
+    foreach ($validLines as $line) {
       if (preg_match('/^(\d{1,})(\s+)(\d{1,})$/', $line, $matches)) {
         $leftList[] = (int) $matches[1];
         $rightList[] = (int) $matches[3];

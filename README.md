@@ -10,16 +10,20 @@ Repo created to store PHPUnit test files for some of the AoC 2024 puzzles
 docker compose -f 'docker-compose.yml' build
 ```
 
-### Run Tests
+### Running Tests
 
 ```docker
 docker run --name hrvl-phpunit --rm -it hrvl/pdi-phpunit php vendor/bin/phpunit --testdox
 ```
 
-### Run scripts:
+### Running the app:
 
-Pass as parameter the day you want to run the scripts. Example:
+Pass as parameters the day you want to run the scripts and the path of the input file. Examples:
 
 ```docker
-docker run --name hrvl-php --rm -it hrvl/pdi-php php src/App.php DayOne
+docker run --name hrvl-php --rm -it hrvl/pdi-php php src/App.php DayOne assets/DayOne/input.txt
+```
+
+```docker
+docker run --name hrvl-php --rm -it hrvl/pdi-php php src/App.php DayTwo assets/DayTwoInputData.txt
 ```

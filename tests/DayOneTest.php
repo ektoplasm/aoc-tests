@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Src\DayOne;
+use Src\Days\DayOne;
 use PHPUnit\Framework\TestCase;
 
 final class DayOneTest extends TestCase

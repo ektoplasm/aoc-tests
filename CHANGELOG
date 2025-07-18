@@ -5,23 +5,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-07-17
+
+### Added
+
+- feat: Added a few new tests for DayOne scripts.
+- feat: Finished the functionality of both parts 1 and 2 of DayTwo.
+- feat: Added more tests for DayTwo.
+
+### Changed
+
+- feat: Added [ignore file](/assets/.gitignore) to `assets` path.
+- docs: Changed docker running commands on [README](README.md).
+
+### Fixed
+
+- fix: Updated ignore files.
+- fix: Changed the path of "Day" classes.
+
 ## [1.1.0] - 2025-07-16
 
 ### Added
 
-- New tests for DayOne.
-- New functionality of parts one and two of DayOne.
+- feat: Added new tests for DayOne.
+- feat: Finished the functionality of both parts 1 and 2 of DayOne.
+- feat: Added tests for DayTwo.
+- docs: Created [CHANGELOG](/CHANGELOG) file.
 
 ### Changed
 
-- Changed the tests of DayOne.
+- feat: Changed the tests of DayOne.
+- chore: Rearranged files in `src` directory.
+- feat: Modified [AbstractDay](/src/days/AbstractDay.php) class.
 
 ### Fixed
 
-- Fixed Github Actions CI file.
+- fix: Fixed errors on [Github Actions CI file](/.github/workflows/ci.yml).
 
 ## [1.0.0] - 2025-07-15
 
 ### Added
 
-- Created the first tests and basic Docker structure
+- feat: Created the first tests and basic Docker structure.
