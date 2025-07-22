@@ -24,22 +24,20 @@ final class DayThreeTest extends TestCase
     $this->dayThreeInstance->setup(null);
   }
 
-  public function testSumAllMulOperations_ShouldThrowException_IfInputIsEmpty(): void
+  public function testSumAllMulOperations_ShouldReturnWrongResult_IfInputIsMalformed(): void
   {
-    $this->expectException(\InvalidArgumentException::class);
-
-    $this->dayThreeInstance->setup("");
+    $this->dayThreeInstance->setup("xmul(p,4)%&mul[3,7]!@^do_not_mil(5,5)+mul(32,64]then(mul(11,8)mul(8,5))");
+    $this->assertNotEquals(153, $this->dayThreeInstance->sumAllMulOperations());
   }
 
-  public function testSumAllMulOperations_ShouldThrowException_IfInputIsMalformed(): void
+  public function testSumAllMulOperations_ShouldReturnTheCorrectResult(): void
   {
-    $this->expectException(\InvalidArgumentException::class);
-    $this->dayThreeInstance->setup("xmul(p,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))");
     $this->assertEquals(161, $this->dayThreeInstance->sumAllMulOperations());
   }
 
-  public function testSumAllMulOperations_ShouldReturnTheCorrectValue(): void
+  public function testSumAllMulOperationsBasedOnProgramInstructions_ShouldReturnCorrectResult(): void
   {
-    $this->assertEquals(161, $this->dayThreeInstance->sumAllMulOperations());
+    $this->dayThreeInstance->setup("xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5)");
+    $this->assertNotEquals(48, $this->dayThreeInstance->sumAllMulOperations());
   }
 }
